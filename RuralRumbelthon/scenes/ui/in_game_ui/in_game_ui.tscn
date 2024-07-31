@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cipjf8hju8klk"]
+
+[ext_resource type="Theme" uid="uid://dgi25bksulh83" path="res://assets/main_theme.tres" id="1_3a774"]
+[ext_resource type="Script" path="res://scenes/ui/in_game_ui/in_game_ui.gd" id="1_56vas"]
+
+[node name="InGameUI" type="VBoxContainer"]
+script = ExtResource("1_56vas")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_3a774")
+theme_type_variation = &"HeaderLarge"
+text = "2 : 1"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="."]
+layout_mode = 2
+size_flags_vertical = 3

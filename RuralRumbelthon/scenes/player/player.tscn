@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://biviwaxn8y1p4"]
+
+[ext_resource type="Texture2D" uid="uid://dusmims26by8c" path="res://assets/2d/player.svg" id="1_7qmce"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_47x2j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbjek"]
+size = Vector2(32, 128)
+
+[node name="Player" type="AnimatableBody2D"]
+collision_mask = 3
+script = ExtResource("1_47x2j")
+speed = 460.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qbjek")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("1_7qmce")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

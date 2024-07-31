@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://du6fe7dj83ljp"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_eu4u8"]
+[ext_resource type="PackedScene" uid="uid://n0bc700vlspv" path="res://scenes/game/game.tscn" id="2_m1rrs"]
+[ext_resource type="PackedScene" uid="uid://cg3coxek0w5hb" path="res://scenes/ui/menu_ui/menu_ui.tscn" id="6_fgcd5"]
+[ext_resource type="PackedScene" uid="uid://cipjf8hju8klk" path="res://scenes/ui/in_game_ui/in_game_ui.tscn" id="7_gs4pk"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_eu4u8")
+
+[node name="Game" parent="." instance=ExtResource("2_m1rrs")]
+unique_name_in_owner = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="InGameUI" parent="CanvasLayer/MarginContainer" instance=ExtResource("7_gs4pk")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MenuUI" parent="CanvasLayer/MarginContainer" instance=ExtResource("6_fgcd5")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]

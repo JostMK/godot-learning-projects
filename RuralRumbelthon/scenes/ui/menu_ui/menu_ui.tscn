@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://cg3coxek0w5hb"]
+
+[ext_resource type="Theme" uid="uid://dgi25bksulh83" path="res://assets/main_theme.tres" id="1_dljxl"]
+[ext_resource type="Script" path="res://scenes/ui/menu_ui/menu_ui.gd" id="1_vpm6o"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_ppqft"]
+action = &"start"
+
+[sub_resource type="Shortcut" id="Shortcut_54i5j"]
+events = [SubResource("InputEventAction_ppqft")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_b4dm3"]
+action = &"quit"
+
+[sub_resource type="Shortcut" id="Shortcut_sc6sr"]
+events = [SubResource("InputEventAction_b4dm3")]
+
+[node name="MenuUI" type="CenterContainer"]
+script = ExtResource("1_vpm6o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="GameOverLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_dljxl")
+theme_type_variation = &"HeaderMedium"
+text = "Player 1 Wins"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="StartButton" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_dljxl")
+shortcut = SubResource("Shortcut_54i5j")
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_dljxl")
+shortcut = SubResource("Shortcut_sc6sr")
+text = "Quit"

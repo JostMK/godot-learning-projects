@@ -1,0 +1,418 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvhgm0qfmajqj"]
+
+[ext_resource type="Texture2D" uid="uid://briowbafy4u5" path="res://assets/2d/background.svg" id="1_j20vt"]
+[ext_resource type="Texture2D" uid="uid://cnjvbuqi8im2c" path="res://assets/2d/scenery/flowers.svg" id="2_54225"]
+[ext_resource type="Texture2D" uid="uid://05areocyrrkh" path="res://assets/2d/scenery/tree.svg" id="2_uu8u8"]
+[ext_resource type="Texture2D" uid="uid://dg588t2q2g3qx" path="res://assets/2d/scenery/fence.svg" id="3_4123n"]
+[ext_resource type="Texture2D" uid="uid://btrviyprnj0er" path="res://assets/2d/scenery/wall.svg" id="4_daa33"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gbiwt"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_07yhe"]
+
+[node name="Scenery" type="Node2D"]
+position = Vector2(960, 540)
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="Grass" type="Sprite2D" parent="Ground"]
+self_modulate = Color(0.483155, 0.71, 0.2059, 1)
+scale = Vector2(16, 10)
+texture = ExtResource("1_j20vt")
+
+[node name="Flower" type="Sprite2D" parent="Ground"]
+position = Vector2(-467, -219)
+rotation = 0.417827
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_54225")
+
+[node name="Flower2" type="Sprite2D" parent="Ground"]
+position = Vector2(-405, -183)
+rotation = -0.632768
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_54225")
+
+[node name="Flower3" type="Sprite2D" parent="Ground"]
+position = Vector2(430, -46)
+rotation = 2.83839
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_54225")
+
+[node name="Flower4" type="Sprite2D" parent="Ground"]
+position = Vector2(422, 22)
+rotation = -0.260856
+scale = Vector2(-0.4, 0.4)
+texture = ExtResource("2_54225")
+
+[node name="Flower5" type="Sprite2D" parent="Ground"]
+position = Vector2(347, -28)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_54225")
+
+[node name="Flower6" type="Sprite2D" parent="Ground"]
+position = Vector2(101, 241)
+scale = Vector2(-0.4, -0.4)
+texture = ExtResource("2_54225")
+
+[node name="Flower7" type="Sprite2D" parent="Ground"]
+position = Vector2(-13, 266)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_54225")
+
+[node name="Flower8" type="Sprite2D" parent="Ground"]
+position = Vector2(-537, 252)
+scale = Vector2(-0.4, 0.4)
+texture = ExtResource("2_54225")
+
+[node name="Flower9" type="Sprite2D" parent="Ground"]
+position = Vector2(201, -268)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_54225")
+
+[node name="Flower10" type="Sprite2D" parent="Ground"]
+position = Vector2(554, 208)
+rotation = -0.00222045
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_54225")
+
+[node name="Fences" type="Node2D" parent="."]
+
+[node name="top" type="StaticBody2D" parent="Fences"]
+position = Vector2(0, -360)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fences/top"]
+position = Vector2(0, 24)
+shape = SubResource("WorldBoundaryShape2D_gbiwt")
+
+[node name="Fence1" type="Sprite2D" parent="Fences/top"]
+position = Vector2(-250, 0)
+texture = ExtResource("3_4123n")
+
+[node name="Fence2" type="Sprite2D" parent="Fences/top"]
+position = Vector2(-500, 0)
+texture = ExtResource("3_4123n")
+
+[node name="Fence3" type="Sprite2D" parent="Fences/top"]
+position = Vector2(500, 0)
+rotation = 3.14159
+texture = ExtResource("3_4123n")
+
+[node name="Fence4" type="Sprite2D" parent="Fences/top"]
+position = Vector2(250, 0)
+scale = Vector2(1, -1)
+texture = ExtResource("3_4123n")
+
+[node name="Fence5" type="Sprite2D" parent="Fences/top"]
+texture = ExtResource("3_4123n")
+
+[node name="bottom" type="StaticBody2D" parent="Fences"]
+position = Vector2(0, 360)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fences/bottom"]
+position = Vector2(0, -24)
+shape = SubResource("WorldBoundaryShape2D_07yhe")
+
+[node name="Fence1" type="Sprite2D" parent="Fences/bottom"]
+position = Vector2(-488, 0)
+texture = ExtResource("3_4123n")
+
+[node name="Fence3" type="Sprite2D" parent="Fences/bottom"]
+position = Vector2(262, 0)
+rotation = -3.14159
+texture = ExtResource("3_4123n")
+
+[node name="Fence4" type="Sprite2D" parent="Fences/bottom"]
+position = Vector2(12, 0)
+scale = Vector2(1, -1)
+texture = ExtResource("3_4123n")
+
+[node name="Fence5" type="Sprite2D" parent="Fences/bottom"]
+position = Vector2(-238, 0)
+texture = ExtResource("3_4123n")
+
+[node name="Fence7" type="Sprite2D" parent="Fences/bottom"]
+position = Vector2(513, 0)
+texture = ExtResource("3_4123n")
+
+[node name="Villages" type="Node2D" parent="."]
+
+[node name="left" type="Node2D" parent="Villages"]
+position = Vector2(-660, 0)
+
+[node name="Wall1" type="Sprite2D" parent="Villages/left"]
+texture = ExtResource("4_daa33")
+
+[node name="Wall2" type="Sprite2D" parent="Villages/left"]
+position = Vector2(0, -256)
+texture = ExtResource("4_daa33")
+
+[node name="Wall3" type="Sprite2D" parent="Villages/left"]
+position = Vector2(0, 256)
+texture = ExtResource("4_daa33")
+
+[node name="right" type="Node2D" parent="Villages"]
+position = Vector2(660, 0)
+
+[node name="Wall1" type="Sprite2D" parent="Villages/right"]
+scale = Vector2(-1, -1)
+texture = ExtResource("4_daa33")
+
+[node name="Wall2" type="Sprite2D" parent="Villages/right"]
+position = Vector2(0, -256)
+scale = Vector2(-1, -1)
+texture = ExtResource("4_daa33")
+
+[node name="Wall3" type="Sprite2D" parent="Villages/right"]
+position = Vector2(0, 256)
+scale = Vector2(-1, -1)
+texture = ExtResource("4_daa33")
+
+[node name="Forest" type="Node2D" parent="."]
+
+[node name="Tree1" type="Sprite2D" parent="Forest"]
+position = Vector2(-612.961, -539.833)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree16" type="Sprite2D" parent="Forest"]
+position = Vector2(-797, -442)
+rotation = 0.922266
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree19" type="Sprite2D" parent="Forest"]
+position = Vector2(-986, -454)
+rotation = -0.0345994
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree23" type="Sprite2D" parent="Forest"]
+position = Vector2(-1176, -368)
+rotation = -1.47858
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree2" type="Sprite2D" parent="Forest"]
+position = Vector2(-204.961, -544.833)
+rotation = -2.82807
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree3" type="Sprite2D" parent="Forest"]
+position = Vector2(-427.961, -536.833)
+rotation = 0.57159
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree4" type="Sprite2D" parent="Forest"]
+position = Vector2(196.039, -545.833)
+rotation = -2.82807
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree5" type="Sprite2D" parent="Forest"]
+position = Vector2(-2.96097, -540.833)
+rotation = -1.40892
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree7" type="Sprite2D" parent="Forest"]
+position = Vector2(577.039, -548.731)
+rotation = 1.07726
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree15" type="Sprite2D" parent="Forest"]
+position = Vector2(764, -478)
+rotation = 0.263269
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree21" type="Sprite2D" parent="Forest"]
+position = Vector2(979, -453)
+rotation = -3.60045
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree25" type="Sprite2D" parent="Forest"]
+position = Vector2(1147, -337)
+rotation = 0.325745
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree6" type="Sprite2D" parent="Forest"]
+position = Vector2(402.039, -530.731)
+rotation = -3.16599
+scale = Vector2(-1, -1)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree8" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.791016, 0.9375, 0.84137, 1)
+position = Vector2(-623.961, -729.731)
+rotation = -1.8573
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree18" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.791016, 0.9375, 0.84137, 1)
+position = Vector2(-849.961, -594.731)
+rotation = -0.0846664
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree24" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.791016, 0.9375, 0.84137, 1)
+position = Vector2(-1215, -537)
+rotation = 5.27281
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree20" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.791016, 0.9375, 0.84137, 1)
+position = Vector2(-1039, -703)
+rotation = 2.57109
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree9" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.791016, 0.9375, 0.84137, 1)
+position = Vector2(-234.961, -715.731)
+rotation = -4.68537
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree10" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.791016, 0.9375, 0.84137, 1)
+position = Vector2(-419.961, -723.731)
+rotation = 0.879186
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree11" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.791016, 0.9375, 0.84137, 1)
+position = Vector2(221.039, -698.731)
+rotation = -4.68537
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree12" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.791016, 0.9375, 0.84137, 1)
+position = Vector2(8.03904, -734.731)
+rotation = -4.39064
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree13" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.791016, 0.9375, 0.84137, 1)
+position = Vector2(641, -705)
+rotation = -0.780042
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree17" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.791016, 0.9375, 0.84137, 1)
+position = Vector2(833.039, -625.731)
+rotation = -0.150931
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree26" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.791016, 0.9375, 0.84137, 1)
+position = Vector2(1270, -471)
+rotation = 3.8905
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree22" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.791016, 0.9375, 0.84137, 1)
+position = Vector2(1082, -611)
+rotation = 1.12961
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree14" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.791016, 0.9375, 0.84137, 1)
+position = Vector2(412, -738)
+rotation = -5.02329
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree27" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.60434, 0.960938, 0.751993, 1)
+position = Vector2(-618.212, -927.731)
+rotation = -1.8573
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree28" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.60434, 0.960938, 0.751993, 1)
+position = Vector2(-856, -837)
+rotation = -0.0846664
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree29" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.60434, 0.960938, 0.751993, 1)
+position = Vector2(-1209.25, -735)
+rotation = 5.27281
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree30" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.60434, 0.960938, 0.751993, 1)
+position = Vector2(-1067, -869)
+rotation = 2.57109
+scale = Vector2(1.03167, 1.03167)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree31" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.60434, 0.960938, 0.751993, 1)
+position = Vector2(-193, -896)
+rotation = -6.89631
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree32" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.60434, 0.960938, 0.751993, 1)
+position = Vector2(-414.212, -921.731)
+rotation = 0.879186
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree33" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.60434, 0.960938, 0.751993, 1)
+position = Vector2(226.788, -896.731)
+rotation = -4.68537
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree34" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.60434, 0.960938, 0.751993, 1)
+position = Vector2(13.7882, -932.731)
+rotation = -4.39064
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree35" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.60434, 0.960938, 0.751993, 1)
+position = Vector2(646.749, -903)
+rotation = -0.780042
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree36" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.60434, 0.960938, 0.751993, 1)
+position = Vector2(861, -828)
+rotation = -0.150931
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree37" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.60434, 0.960938, 0.751993, 1)
+position = Vector2(1275.75, -669)
+rotation = 3.8905
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree38" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.60434, 0.960938, 0.751993, 1)
+position = Vector2(1087.75, -809)
+rotation = 3.3269
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")
+
+[node name="Tree39" type="Sprite2D" parent="Forest"]
+self_modulate = Color(0.60434, 0.960938, 0.751993, 1)
+position = Vector2(427, -921)
+rotation = -4.63832
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_uu8u8")

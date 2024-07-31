@@ -1,0 +1,62 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dgi25bksulh83"]
+
+[ext_resource type="FontFile" uid="uid://djw0b1m6rowfr" path="res://assets/font/Kenney Blocks.ttf" id="1_073nv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7es2g"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.265625, 0.265625, 0.265625, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhpee"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.203125, 0.203125, 0.203125, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgtfv"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.28125, 0.28125, 0.28125, 1)
+corner_detail = 1
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5u2gx"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.15625, 0.15625, 0.15625, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16vj2"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.132813, 0.132813, 0.132813, 1)
+
+[resource]
+default_font = ExtResource("1_073nv")
+Button/styles/disabled = SubResource("StyleBoxFlat_7es2g")
+Button/styles/focus = SubResource("StyleBoxFlat_rhpee")
+Button/styles/hover = SubResource("StyleBoxFlat_wgtfv")
+Button/styles/normal = SubResource("StyleBoxFlat_5u2gx")
+Button/styles/pressed = SubResource("StyleBoxFlat_16vj2")
+HeaderLarge/font_sizes/font_size = 64
+HeaderMedium/font_sizes/font_size = 32
+HeaderSmall/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_073nv")
