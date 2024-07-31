@@ -21,8 +21,8 @@ func _physics_process(delta):
 		if not collision:
 			break
 		
-		if collision.get_collider().has_method("ball_hit"):
-			collision.get_collider().call("ball_hit", self)
+		if collision.get_collider().has_method("_on_ball_hit"):
+			collision.get_collider().call("_on_ball_hit", self)
 			
 		var bounce = collision.get_remainder().bounce(collision.get_normal())
 		velocity = velocity.bounce(collision.get_normal()) + collision.get_collider_velocity()

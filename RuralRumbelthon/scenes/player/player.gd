@@ -1,6 +1,10 @@
 extends AnimatableBody2D
+class_name Player
 
-enum Actor {PLAYER_1 = 0, PLAYER_2 = 1}
+enum Actor {
+	PLAYER_1 = 0,
+	PLAYER_2 = 1
+}
 
 @export var speed = 300.0
 
@@ -10,12 +14,6 @@ enum Actor {PLAYER_1 = 0, PLAYER_2 = 1}
 @onready var audio_player = $AudioStreamPlayer2D
 
 var velocity: Vector2
-
-func ball_hit(ball: Ball):
-	var velocity_ratio = ball.velocity.length() / ball.speed
-	audio_player.pitch_scale = log(velocity_ratio + 1) / log(2) # log2(r+1)
-	
-	audio_player.play()
 
 func _ready():
 	sprite.self_modulate = config.color
@@ -31,11 +29,15 @@ func _physics_process(delta):
 	else:
 		velocity.y = move_toward(velocity.y, 0, speed)
 	
-	position = clamp_position(position + velocity * delta)
-	
+	var collision = move_and_collide(velocity * delta) as KinematicCollision2D
 
-func clamp_position(pos: Vector2) -> Vector2:
-	var yExtend = sprite.get_rect().size.y * sprite.scale.y * scale.y * 0.5
-	var yScreenExtend = get_window().size.y * 0.5
-	var y = clamp(pos.y, -yScreenExtend + yExtend, yScreenExtend - yExtend)
-	return Vector2(pos.x, y)
+	# Hit static wall so stop movement
+	if collision and collision.get_collider() is StaticBody2D:
+		velocity = Vector2.ZERO
+
+
+func _on_ball_hit(ball: Ball):
+	var velocity_ratio = ball.velocity.length() / ball.speed
+	audio_player.pitch_scale = log(velocity_ratio + 1) / log(2) # log2(r+1)
+	
+	audio_player.play()

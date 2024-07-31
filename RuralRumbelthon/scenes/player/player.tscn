@@ -8,6 +8,7 @@ size = Vector2(32, 128)
 
 [node name="Player" type="AnimatableBody2D"]
 collision_mask = 3
+sync_to_physics = false
 script = ExtResource("1_47x2j")
 speed = 460.0
 
