@@ -72,6 +72,7 @@ texture = ExtResource("2_54225")
 
 [node name="top" type="StaticBody2D" parent="Fences"]
 position = Vector2(0, -360)
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fences/top"]
 position = Vector2(0, 24)
@@ -100,6 +101,7 @@ texture = ExtResource("3_4123n")
 
 [node name="bottom" type="StaticBody2D" parent="Fences"]
 position = Vector2(0, 360)
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fences/bottom"]
 position = Vector2(0, -24)

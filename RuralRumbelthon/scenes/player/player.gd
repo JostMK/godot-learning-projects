@@ -16,6 +16,9 @@ enum Actor {
 var velocity: Vector2
 
 func _ready():
+	# we manually move the ball using PhysicsBody2D.move_and_collide()
+	sync_to_physics = false
+
 	sprite.self_modulate = config.color
 	audio_player.stream = config.ball_hit_audio
 	
