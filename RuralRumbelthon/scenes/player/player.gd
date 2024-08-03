@@ -39,8 +39,9 @@ func _physics_process(delta):
 		velocity = Vector2.ZERO
 
 
-func _on_ball_hit(ball: Ball):
-	var velocity_ratio = ball.velocity.length() / ball.speed
-	audio_player.pitch_scale = log(velocity_ratio + 1) / log(2) # log2(r+1)
+func _on_ball_hit(_ball: Ball):
+	# ToDo: rethink pitch modulation
+	#var velocity_ratio = ball.velocity.length() / ball.target_speed
+	#audio_player.pitch_scale = log(velocity_ratio + 1) / log(2) # log2(r+1)
 	
 	audio_player.play()
